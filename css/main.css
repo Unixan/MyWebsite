@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(25, 25, 25);
+  color: rgb(197, 197, 197);
+}
+
+form {
+    margin-top: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+input, select{
+    background-color: rgb(69, 69, 69);
+    color: rgb(0, 0, 0);
+    
+}
+
+select{
+    text-align: center;
+}
+
+form label {
+    font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: x-large;
+  
+}
+
+form label,input, button, option{
+    margin: 3px;
+    padding: 5px;
+}
+
+button{
+    align-self: center;
+    margin-top: 10px;
+    background-color: blue;
+    border-radius: 50px;
+    width: 70px;
+}
