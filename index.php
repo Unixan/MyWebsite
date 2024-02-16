@@ -5,29 +5,34 @@
     <title>Document</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <main>
-        <form action="includes/formhandler.php" method="post">
-            <label for="firstname">Firstname?</label>
-            <input id="firstname" type="text" name="firstname" placeholder="Firstname ...">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="number" name="num01" placeholder="Number one" required>
+        <select name="operator">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="number" name="num02" placeholder="Number two" required>
+        <br>
+        <button>Calculate</button>
+    </form>
 
-            <label for="lastname">Lastname?</label>
-            <input id="lastname" type="text" name="lastname" placeholder="Lastname ...">
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT);
+        $num02 = filter_input(INPUT_POST, "num02", FILTER_SANITIZE_NUMBER_FLOAT);
+        $operator = htmlspecialchars($_POST["operator"]);
+    };
 
-            <label for="favouritepet">Favourite pet?</label>
-            <select id="favouritepet" name="favouritepet">
-                <option value="none">None</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="bird">Bird</option>
-            </select>
+    // error handlers
 
-            <button type="submit" name="submit">Submit</button>
-        </form>
-    </main>
+    $errors = false;
+    if()
+    ?>
 
 </body>
 
